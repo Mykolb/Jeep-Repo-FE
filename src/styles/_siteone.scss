@@ -110,5 +110,16 @@ h3 {
 
 }
 
+.page-num {
+    grid-column: 1/4;
+    // border: 2px solid green;
+}
+
+.page-num h3 {
+    float: right;
+    margin-right: 3%;
+    font-size: 20px;
+}
+
 
 

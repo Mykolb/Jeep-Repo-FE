@@ -9,7 +9,7 @@ const FavoritesList = () => {
     const {isLoading, faveState} = useData('https://jeep-prices-repo-be.herokuapp.com/my-favorites');
  
 
-    console.log('fave state', faveState)
+    console.log('fave state in favorites', faveState)
 
   if(faveState <= 0) {
       return <h2>There are no favorites saved in the database. ;-( </h2>
@@ -20,12 +20,12 @@ const FavoritesList = () => {
         <>
         {!isLoading ? (
             <>
-        {faveState.map(data => {
+        {faveState.map((data, i) => {
             return(
-                <div>
+                <div key={i}>
                     <p>{data.title}</p>
                     <p>{data.deetz}</p>
-                    <p>{data.img}</p>
+                    <p><img src={data.img} alt='dummy-img'></img></p>
                     <p>{data.price}</p>
                 </div>
             )

@@ -19,7 +19,7 @@ const SiteTwo = () => {
                 
                 <> 
                 { currentCard === i &&
-                <div className='site-container-two' key={data._id} >
+                <div className='site-container-two' key={i} >
                 {/* <FontAwesomeIcon icon="angle-left" className='left-arrow-two' onClick={prevCard} /> */}
                 {/* <h2>Site two goes here.</h2> */}
                 <h3 className='prev' onClick={prevCard}>Previous Page</h3>
