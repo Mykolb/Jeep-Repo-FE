@@ -1,9 +1,19 @@
+.favorite-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.fave-list {
+    width: 300px;
+    margin: 4% 1% 1% 1%;
+}
 
 .fave-img {
-    max-width: 150px;
+    max-width: 300px;
 }
 
 p {
     font-size: 12px;
 }
+

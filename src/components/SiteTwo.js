@@ -55,7 +55,9 @@ const SiteTwo = () => {
                 <hr></hr>
                 <img src={data.img} alt='jeep img'></img>
                 </div>
-
+                <div className='page-num'>
+                <h3>Card: {currentCard} </h3>
+                </div>
                 {/* <FontAwesomeIcon icon="angle-right" className='right-arrow-two' onClick={nextCard} /> */}
                 </div>
                   }

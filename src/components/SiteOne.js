@@ -18,7 +18,7 @@ const SiteOne = () => {
     const {siteState, currentCard, nextCard, prevCard, isLoading} = useData('https://jeep-prices-repo-be.herokuapp.com/siteOne'); 
  
 
-
+   
 
   
     return(
@@ -54,7 +54,7 @@ const SiteOne = () => {
                 <a href={data.img}><img src={data.img} alt='jeep img'></img></a>
                 </div>
                 <div className='page-num'>
-                {/* <h3>Card: {currentCard + 1} </h3> */}
+                <h3>Card: {currentCard} </h3>
                 </div>
                 </div>  
         }  
