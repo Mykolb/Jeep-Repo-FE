@@ -3,17 +3,15 @@ import axios from 'axios';
 
 
 //created custom hook to pass state + load spinner + reuseable functions to make a card carousel
-const useData = (myUrl, props) => {
-    console.log('DATA PROPS', props)
-
-
-
+const useData = (myUrl) => {
+   
 
 const [siteState, setSiteState] = useState([]);
 const [currentCard, setCurrentCard] = useState(0);
 const [isLoading, setLoading] = useState(true);
 const [isFavorite, setFavorite] = useState(false);
 const [faveState, setFaveState] = useState([]);
+const [validate, setValidate] = useState(false)
 
 //functions for selecting prev or next card
 //reset once it hits ends of []
@@ -52,9 +50,16 @@ const prevCard = () => {
     }, []);
 
 
+    const successMsg = () => {
+        if(validate === true && !isFavorite) {
+                return <h3>Added to favorites!</h3>
+        }
+    }
+ 
+        
      
   
-    return { siteState, setSiteState, setCurrentCard, currentCard, nextCard, prevCard, isLoading, isFavorite, setFavorite, faveState, setFaveState}
+    return { siteState, setSiteState, setCurrentCard, currentCard, nextCard, prevCard, isLoading, isFavorite, setFavorite, faveState, setFaveState, validate, setValidate, successMsg}
     }
 
 

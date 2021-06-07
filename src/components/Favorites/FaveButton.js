@@ -1,3 +1,4 @@
+import React, {useState} from 'react';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import UseData from '../Hooks/UseData'
 import axios from 'axios';
@@ -9,11 +10,12 @@ import axios from 'axios';
 const FaveButton = (props) => {
 console.log('BTN PROPS', props)
 // console.log('BTN Vehicle', vehicle)
-const { card, data} = props
+const { card, data, valid} = props
 console.log('CARD', card)
 console.log('DaTA', data)
 
-    const {faveState, setFaveState, siteState, currentCard, setCurrentCard} = UseData(); 
+const { faveState, setValidate, successMsg} = UseData(); 
+
 
     //look into includes, index of, etc tomorrow
     
@@ -27,20 +29,23 @@ console.log('DaTA', data)
                 .then(res => {
                     console.log(res)
                     faveState.push(res)
+                    setValidate(true)
                 })
                 .catch(err => console.log(err))
             }
 
         })
-
-
     }
+
+    
+
 
 
 
     return(
-        <>
-        <FontAwesomeIcon icon="heart" className='heart-icon' onClick={() => addFavorite(faveState)}  />
+        <>   
+        <FontAwesomeIcon icon="heart" className='heart-icon' onClick={() => addFavorite()} />
+        {successMsg()}
         </>
     )
  
