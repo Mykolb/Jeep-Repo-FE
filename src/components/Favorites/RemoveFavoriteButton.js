@@ -6,25 +6,25 @@ import axios from 'axios';
 
 const RemoveFavoriteButton = (props) => {
 
-
-    console.log('REMOVE BTN', props)
-    const { data } = props
-    console.log('FAV STATE', data)
-
     const { faveState, setFaveState } = UseData(); 
 
+   
+    let { data, id } = props
+
+//    console.log('ID', id)
+    
+    
 const deleteFavorite = () => {
 
-
-   
-    
-    
-    
-}
-
-
-
-
+    if(id) {
+        axios.delete(`https://jeep-prices-repo-be.herokuapp.com/my-favorites/${id}`)
+        .then(res => {
+            console.log(res)
+            setFaveState(faveState)
+        })
+        .catch(err => console.log(err))
+    }
+ }
 
     return(
         <>

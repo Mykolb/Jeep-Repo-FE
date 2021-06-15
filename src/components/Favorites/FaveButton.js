@@ -7,10 +7,10 @@ import axios from 'axios';
 
 
 const FaveButton = (props) => {
-console.log('BTN PROPS', props)
+// console.log('BTN PROPS', props)
 const { card, data} = props
-console.log('CARD', card)
-console.log('DaTA', data)
+// console.log('CARD', card)
+// console.log('DaTA', data)
 
 const { faveState, setValidate, successMsg} = UseData(); 
 
@@ -19,7 +19,7 @@ const { faveState, setValidate, successMsg} = UseData();
     const addFavorite = () => {
     
         data.map(( item, i ) => {
-            console.log('ITEM', item, 'I', i)
+            // console.log('ITEM', item, 'I', i)
             if(item['_id'] && i === card) {
                 axios.post('https://jeep-prices-repo-be.herokuapp.com/my-favorites', item)
                 .then(res => {
@@ -41,7 +41,7 @@ const { faveState, setValidate, successMsg} = UseData();
     return(
         <>   
         <FontAwesomeIcon icon="heart" className='heart-icon' onClick={() => addFavorite()} />
-        {successMsg()}
+        {successMsg() }
         </>
     )
  

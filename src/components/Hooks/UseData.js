@@ -52,12 +52,10 @@ const prevCard = () => {
 
     const successMsg = () => {
         if(validate === true && !isFavorite) {
-                return <h3>Added to favorites!</h3>
-        }
-    }
- 
-        
-     
+                return <h3>Added to Favorites!</h3>
+        } 
+}
+
   
     return { siteState, setSiteState, setCurrentCard, currentCard, nextCard, prevCard, isLoading, isFavorite, setFavorite, faveState, setFaveState, validate, setValidate, successMsg}
     }
