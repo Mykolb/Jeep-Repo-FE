@@ -38,7 +38,7 @@ const addFavorite = () => {
 
     return(
         <>   
-        <FontAwesomeIcon icon="heart" className='heart-icon' onClick={() => addFavorite()} />
+        <FontAwesomeIcon icon="heart" className='save' onClick={() => addFavorite()} />
         {successMsg() }
         </>
     )

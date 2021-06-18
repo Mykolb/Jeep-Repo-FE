@@ -5,6 +5,7 @@ import RemoveFavoriteButton from './RemoveFavoriteButton';
 import '../../styles/_favoriteslist.scss';
 import SortFavorites from './SortFavorties';
 
+
 const FavoritesList = () => {
 
 
@@ -12,6 +13,9 @@ const FavoritesList = () => {
     const {isLoading, faveState, setFaveState} = useData('https://jeep-prices-repo-be.herokuapp.com/my-favorites');
     const [showMore, setShowMore] = useState(false)
 
+    console.log(faveState)
+
+    //toggle info in favorites, need to make the toggle work for each card at a time
     const showText = () => {
         if (showMore === false) {
             setShowMore(true)
@@ -24,19 +28,21 @@ const FavoritesList = () => {
       return <h2>There are no favorites saved in the database. ;-( </h2>
   }
 
-
+  
     return(
+        <>
+          <SortFavorites />
         <>
         {!isLoading ? (
             
             <div className='favorite-container'>
-                <SortFavorites />
+                {/* <SortFavorites /> */}
         {faveState.map((data, i) => {
             return(
                 <div key={i} className='fave-list'>
-                    <RemoveFavoriteButton  data={faveState} id={data._id} className='delete-favorite'/>
+                    <RemoveFavoriteButton  data={faveState} id={data._id} />
                     <p>{data.title}</p>
-                    <h3 onClick={showText}>Show More </h3>
+                    <h3 onClick={showText}>Read More </h3>
                     <>
                     {showMore === true && 
                     <>
@@ -51,6 +57,7 @@ const FavoritesList = () => {
         })}
             </div>
  )        : (< Spinner />) }
+        </>
         </>
     )
 }

@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import UseData from '../Hooks/UseData'
 import axios from 'axios';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 
 
 
@@ -28,7 +29,7 @@ const deleteFavorite = () => {
 
     return(
         <>
-        <button onClick={() => deleteFavorite()}>Delete</button>
+        <FontAwesomeIcon icon='trash-alt' className='delete' onClick={() => deleteFavorite()}>Delete</FontAwesomeIcon>
         </>
     )
 }

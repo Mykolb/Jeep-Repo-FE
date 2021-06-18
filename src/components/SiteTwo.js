@@ -24,8 +24,10 @@ const SiteTwo = () => {
                 {/* <FontAwesomeIcon icon="angle-left" className='left-arrow-two' onClick={prevCard} /> */}
                 {/* <h2>Site two goes here.</h2> */}
                 <h3 className='prev' onClick={prevCard}>Previous Page</h3>
-                <h3 className='next' onClick={nextCard}>Next Page</h3>
+                <h3>Save to Faves
                 <FaveButton card={currentCard} data={siteState}  />
+                </h3>
+                <h3 className='next' onClick={nextCard}>Next Page</h3>
                 <div className='miles-container'>
                 <h3>Mileage</h3>
                 <hr></hr>

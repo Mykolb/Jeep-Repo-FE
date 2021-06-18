@@ -30,8 +30,11 @@ const SiteOne = () => {
                 {currentCard === i &&
                 <div className='site-container-one' key={i} value={currentCard}>
                 <h3 className='prev' onClick={prevCard}>Previous Page</h3>
-                <h3 className='next' onClick={nextCard}>Next Page</h3>
+                <h3> Save to Faves
                 <FaveButton card={currentCard} data={siteState}  />
+                </h3>
+                <h3 className='next' onClick={nextCard}>Next Page</h3>
+                
                 {/* <h2>Site One Name Here</h2> */}
                 {/* price is one row centered*/}
                 <div className='price-container'>
