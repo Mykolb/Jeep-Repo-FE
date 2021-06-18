@@ -2,6 +2,7 @@ import '../styles/_sitetwo.scss';
 //importing arrow icons
 import useData from './Hooks/UseData';
 import Spinner from './Spinner';
+import FaveButton from './Favorites/FaveButton';
 
 
 const SiteTwo = () => {
@@ -19,11 +20,12 @@ const SiteTwo = () => {
                 
                 <> 
                 { currentCard === i &&
-                <div className='site-container-two' key={data._id} >
+                <div className='site-container-two' key={i} >
                 {/* <FontAwesomeIcon icon="angle-left" className='left-arrow-two' onClick={prevCard} /> */}
                 {/* <h2>Site two goes here.</h2> */}
                 <h3 className='prev' onClick={prevCard}>Previous Page</h3>
                 <h3 className='next' onClick={nextCard}>Next Page</h3>
+                <FaveButton card={currentCard} data={siteState}  />
                 <div className='miles-container'>
                 <h3>Mileage</h3>
                 <hr></hr>
@@ -53,7 +55,9 @@ const SiteTwo = () => {
                 <hr></hr>
                 <img src={data.img} alt='jeep img'></img>
                 </div>
-
+                <div className='page-num'>
+                <h3>Card: {currentCard} </h3>
+                </div>
                 {/* <FontAwesomeIcon icon="angle-right" className='right-arrow-two' onClick={nextCard} /> */}
                 </div>
                   }
