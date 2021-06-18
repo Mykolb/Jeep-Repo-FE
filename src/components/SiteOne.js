@@ -1,7 +1,6 @@
 import '../styles/_siteone.scss';
 //importing arrow icons
 import useData from './Hooks/UseData';
-// import useFaves from './Hooks/useFaves';
 import Spinner from './Spinner';
 import FaveButton from './Favorites/FaveButton';
 

@@ -11,7 +11,7 @@ const [currentCard, setCurrentCard] = useState(0);
 const [isLoading, setLoading] = useState(true);
 const [isFavorite, setFavorite] = useState(false);
 const [faveState, setFaveState] = useState([]);
-const [validate, setValidate] = useState(false)
+const [validate, setValidate] = useState(false);
 
 //functions for selecting prev or next card
 //reset once it hits ends of []

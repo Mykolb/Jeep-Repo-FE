@@ -12,24 +12,22 @@ const { card, data} = props
 // console.log('CARD', card)
 // console.log('DaTA', data)
 
-const { faveState, setValidate, successMsg} = UseData(); 
+const { faveState, setValidate, successMsg} = UseData('https://jeep-prices-repo-be.herokuapp.com/my-favorites'); 
 
 
+const addFavorite = () => {
     
-    const addFavorite = () => {
-    
-        data.map(( item, i ) => {
-            // console.log('ITEM', item, 'I', i)
-            if(item['_id'] && i === card) {
-                axios.post('https://jeep-prices-repo-be.herokuapp.com/my-favorites', item)
-                .then(res => {
-                    console.log(res)
-                    faveState.push(res)
-                    setValidate(true)
+    data.map(( item, i ) => {
+    // console.log('ITEM', item, 'I', i)
+        if(item['_id'] && i === card) {
+            axios.post('https://jeep-prices-repo-be.herokuapp.com/my-favorites', item)
+            .then(res => {
+                console.log(res)
+                faveState.push(res)
+                setValidate(true)
                 })
-                .catch(err => console.log(err))
+            .catch(err => console.log(err))
             }
-
         })
     }
 

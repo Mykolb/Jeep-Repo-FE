@@ -1,12 +1,19 @@
+@import '_mixins';
+
 .favorite-container {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: baseline;
+    flex-wrap: wrap;
 }
 
 .fave-list {
     width: 300px;
     margin: 4% 1% 1% 1%;
+    @include containerColor;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-radius: 15px;
+    padding: 1%;
 }
 
 .fave-img {
