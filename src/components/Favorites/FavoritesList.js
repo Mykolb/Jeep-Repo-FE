@@ -2,6 +2,7 @@ import useData from '../Hooks/UseData';
 import React, {useState} from 'react';
 import Spinner from '../Spinner';
 import RemoveFavoriteButton from './RemoveFavoriteButton';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import '../../styles/_favoriteslist.scss';
 import SortFavorites from './SortFavorties';
 
@@ -25,7 +26,7 @@ const FavoritesList = () => {
     }
 
   if(faveState <= 0) {
-      return <h2>There are no favorites saved in the database. ;-( </h2>
+      return <h2>There are no favorites saved in the database. <FontAwesomeIcon icon='meh'/> </h2>
   }
 
   
@@ -44,12 +45,12 @@ const FavoritesList = () => {
                     <p>{data.title}</p>
                     <h3 onClick={showText}>Read More </h3>
                     <>
-                    {showMore === true && 
-                    <>
-                    <p>{data.deetz}</p>
-                    <p>{data.price}</p>
-                    </>
-                    }
+                     {showMore === true && 
+                        <>
+                         <p>{data.deetz}</p>
+                         <p>{data.price}</p>
+                        </>
+                      }
                     </>
                     <p><img src={data.img} alt='fave-img' className='fave-img'></img></p>
                 </div>

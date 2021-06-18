@@ -1,6 +1,7 @@
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import UseData from '../Hooks/UseData'
 import axios from 'axios';
+import '../../styles/_favebutton.scss';
 
 
 

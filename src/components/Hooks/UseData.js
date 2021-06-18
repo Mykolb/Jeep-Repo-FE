@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 
 
 //created custom hook to pass state + load spinner + reuseable functions to make a card carousel
@@ -52,7 +53,14 @@ const prevCard = () => {
 
     const successMsg = () => {
         if(validate === true && !isFavorite) {
-                return <h3>Added to Favorites!</h3>
+                return(
+        <h4 className='fave-success-msg'>
+            Successfully added to Favorites! <FontAwesomeIcon icon="check-circle" />
+            </h4>
+                )
+                
+                
+                
         } 
 }
 
