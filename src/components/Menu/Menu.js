@@ -10,7 +10,7 @@ const Menu = () => {
    const [openMenu, setOpenMenu] = useState(false);
 
   
-   const openSlidingMenu = () => {
+    const openSlidingMenu = () => {
        setOpenMenu(true)
     }
 

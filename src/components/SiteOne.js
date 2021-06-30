@@ -1,7 +1,6 @@
 import '../styles/_siteone.scss';
 //importing arrow icons
 import useData from './Hooks/UseData';
-// import useFaves from './Hooks/useFaves';
 import Spinner from './Spinner';
 import FaveButton from './Favorites/FaveButton';
 
@@ -31,8 +30,11 @@ const SiteOne = () => {
                 {currentCard === i &&
                 <div className='site-container-one' key={i} value={currentCard}>
                 <h3 className='prev' onClick={prevCard}>Previous Page</h3>
-                <h3 className='next' onClick={nextCard}>Next Page</h3>
+                <h3> Save to Faves
                 <FaveButton card={currentCard} data={siteState}  />
+                </h3>
+                <h3 className='next' onClick={nextCard}>Next Page</h3>
+                
                 {/* <h2>Site One Name Here</h2> */}
                 {/* price is one row centered*/}
                 <div className='price-container'>
