@@ -37,13 +37,18 @@ h3 {
     cursor: pointer; 
  }
 
+ .save:focus {
+    color: paleturquoise;
+    cursor: progress;
+ }
+
 
 .site-container-one {
     @include container;
     display: grid;
     @include border;
     border-radius: 15px;
-    margin: 2% 2% 0 2%;
+    margin: 1% 2% 0 2%;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     grid-template-columns: repeat(3, 1fr);
 }

@@ -7,15 +7,15 @@ import '../../styles/_sort.scss';
 const SortFavorites = () => {
 
 
-    const { faveState, setFaveState} = UseData(); 
+    // const { faveState, setFaveState} = UseData('https://jeep-prices-repo-be.herokuapp.com/my-favorites'); 
 
 
 
     const sortLowToHigh = () => {
-        const sorted = [...faveState].sort((a, b) => {
-            console.log(a.price - b.price)
-        })
-        setFaveState(sorted)
+        // const sorted = [...faveState].sort((a, b) => {
+        //     console.log(a.price - b.price)
+        // })
+        // setFaveState(sorted)
     }
 
 

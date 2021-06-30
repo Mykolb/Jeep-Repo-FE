@@ -1,5 +1,28 @@
-.sort-container {
+.search-sort-container {
    display: flex;
-   justify-content:  center;
-
+   justify-content: center;
+   flex-direction: row;
 }
+
+
+.sort-container {
+   margin: 1%;
+   
+   input {
+      height: 30px;
+      border-radius: 15px;
+   }
+}
+
+.search-container {
+   margin: 1%; 
+   
+   .search-input{
+      height: 30px;
+      width: 250px;
+      border-radius: 15px;
+      text-align: center;
+   }
+}
+
+
