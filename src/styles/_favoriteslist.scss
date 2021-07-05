@@ -29,3 +29,21 @@ p {
     float: right;
     margin-left: .25%;
 }
+
+.search-container {
+   display: flex;
+   justify-content: center;
+   align-items: baseline;
+   flex-direction: row;
+
+
+   .search-input{
+    height: 30px;
+    width: 250px;
+    border-radius: 15px;
+    text-align: center;
+    background-color: #CED1D3;
+ }
+
+
+}

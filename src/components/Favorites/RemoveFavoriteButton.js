@@ -9,12 +9,12 @@ const RemoveFavoriteButton = (props) => {
 
   let { faveId } = props;
   // console.log("ID", faveId);
-    console.log('State upon refresh', faveState)
+    // console.log('State upon refresh', faveState)
 
 //i might be re-freshing the button and not the favorite list like I initially thought hmmm....
   const  deleteFavorite = () => {
  
-      console.log('Del ID', faveId)
+      // console.log('Del ID', faveId)
       axios
         .delete(`https://jeep-prices-repo-be.herokuapp.com/my-favorites/${faveId}`)
         .then((res) =>{

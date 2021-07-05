@@ -1,12 +1,13 @@
-import SearchFavorites from "./SearchFavorites";
+import SearchFavorites from "./SearchBar";
 import SortFavorites from "./SortFavorties";
 import "../../styles/_sort.scss";
 
-const SearchnSortContainer = () => {
+const SearchnSortContainer = (props) => {
+
     return(
         <section className= 'search-sort-container'>
-            <SortFavorites />
-            <SearchFavorites />
+            <SortFavorites  />
+            {/* <SearchFavorites /> */}
         </section>
     )
 
