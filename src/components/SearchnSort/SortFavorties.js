@@ -7,7 +7,7 @@ import '../../styles/_sort.scss';
 const SortFavorites = () => {
 
 
-    const { faveState, setFaveState} = UseData(); 
+    const { faveState, setFaveState} = UseData('https://jeep-prices-repo-be.herokuapp.com/my-favorites'); 
 
 
 
