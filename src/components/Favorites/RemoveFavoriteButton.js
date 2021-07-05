@@ -19,9 +19,7 @@ const RemoveFavoriteButton = (props) => {
         .delete(`https://jeep-prices-repo-be.herokuapp.com/my-favorites/${faveId}`)
         .then((res) =>{
             console.log(res)
-            // if(res) {
               setFaveState({faveState: [...faveState].filter(item => item.faveId !== faveId)})
-            // }
         })
         .catch((err) => console.log(err));
     }
