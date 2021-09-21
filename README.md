@@ -14,6 +14,7 @@ Uses the following:
 Current Features:
 - View Jeeps from two different sites.
 - Jeeps can be saved to Favorites.
+- Jeeps can be deleted from Favorites.
 - Search Jeeps that are saved to Favorites using the search bar.
 
 
