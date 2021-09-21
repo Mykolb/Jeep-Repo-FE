@@ -65,16 +65,21 @@ const useData = (myUrl) => {
 
   const successMsg = () => {
     if (validate === true && !isFavorite) {
-      return (
-        <h4 className="fave-success-msg">
-          {" "}
-          Successfully added to Favorites!{" "}
-          <FontAwesomeIcon icon="check-circle" />{" "}
-        </h4>
-      );
-    }
-  };
-  
+        return(
+          <h4 className="fave-success-msg">{" "} 
+          Successfully added to Favorites!{" "} 
+          <FontAwesomeIcon icon="check-circle"/>{" "}
+          </h4>
+        )
+}}
+
+// return (
+//   <h4 className="fave-success-msg">
+//     {" "}
+//     Successfully added to Favorites!{" "}
+//     <FontAwesomeIcon icon="check-circle" />{" "}
+//   </h4>
+// })
   
 
   return {

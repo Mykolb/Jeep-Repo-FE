@@ -5,6 +5,15 @@ const OpenMenu = () => {
   return (
     <section className="nav-container">
       <NavLink
+        to={`/`}
+        className="nav"
+        activeClassName="selected"
+        activeStyle={{ color: "white", cursor: "pointer" }}
+      >
+        {" "}
+        Home
+      </NavLink>
+      <NavLink
         to={`/site-one`}
         className="nav"
         activeClassName="selected"

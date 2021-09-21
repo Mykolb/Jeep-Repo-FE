@@ -8,25 +8,42 @@ const SortFavorites = () => {
 
 
     const { faveState, setFaveState} = UseData('https://jeep-prices-repo-be.herokuapp.com/my-favorites'); 
+    // console.log('state', faveState)
+    const [sortFaves, setSortFaves] = useState([])
+    const [sortType, setSortType] = useState('price');
 
 
+    const selectDropdown = e => {
+        setSortType(e.target.value);
+        // console.log("e", e.target.value);
+      };    
+     
+    // const sortLowToHigh = () => {
+    //     const sorted = [...faveState].sort((a, b) => {
+    //         // console.log('SORt', sorted)
+    //         return a.price - b.price
+    //     })
+       
+    //     setSortFaves(sorted)
+    // }
+    // console.log('sortFaves', sortFaves)
 
-    const sortLowToHigh = () => {
-        const sorted = [...faveState].sort((a, b) => {
-            console.log(a.price - b.price)
+
+    useEffect(() => {
+        const sortedRes = [...faveState].sort((a, b) => {
+            return a.price - b.price
         })
-        setFaveState(sorted)
-    }
+       
+        setSortFaves(sortedRes)
+    }, [])
 
-
-
-
+    // console.log('Sort State', sortFaves)
 
     return(
         <div className='sort-container'>
             <select name='sort'>
                 <option>Sort:</option>
-                <option value='low' onClick={sortLowToHigh}>Low to High</option>
+                <option value='low' onChange={selectDropdown}>Low to High</option>
                 <option value='high'>High to Low</option>
             </select>
         </div>

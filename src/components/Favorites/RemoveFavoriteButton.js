@@ -1,9 +1,10 @@
 import UseData from "../Hooks/UseData";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const RemoveFavoriteButton = (props) => {
-  const { setFaveState, faveState, setLoading} = UseData(
+  const { setFaveState, faveState} = UseData(
     "https://jeep-prices-repo-be.herokuapp.com/my-favorites"
   );
 
@@ -19,14 +20,23 @@ const RemoveFavoriteButton = (props) => {
         .delete(`https://jeep-prices-repo-be.herokuapp.com/my-favorites/${faveId}`)
         .then((res) =>{
             console.log(res)
-              setFaveState({faveState: [...faveState].filter(item => item.faveId !== faveId)})
+            let updatedState = [...faveState].filter(item => item.faveId !== faveId)
+            console.log('FaveId', faveId)
+            console.log("Filtered", updatedState)
+            setFaveState({ faveState: updatedState})
+
+              // setFaveState({faveState: [...faveState].filter(item => item.faveId !== faveId)})
+              if(res.status === 201) {
+                console.log('Successfully deleted!')
+                return <h2 className='test'>Deleted!</h2>
+              }
+
         })
         .catch((err) => console.log(err));
     }
-
-
+  // console.log(faveState)
     // console.log('fave state', faveState)
-
+ 
             
   return (
     <>
