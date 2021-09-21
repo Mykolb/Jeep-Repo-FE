@@ -13,9 +13,10 @@ const FavoritesList = () => {
   const [filteredFaves, setFilteredFaves] = useState([]);
   const [searchInput, setSearchInput] = useState("");
   const [showText, setShowText] = useState(false);
-
-
-
+  const [currentFaveCard, setCurrentFaveCard] = useState()
+  
+    console.log('favecard', currentFaveCard)
+  
 //keeping track of the searchBar input
   const handleChange = (e) => {
     setSearchInput(e.target.value);
@@ -32,7 +33,7 @@ const FavoritesList = () => {
     });
     setFilteredFaves(filteredRes);
   }, [searchInput, faveState]);
-
+//status msg when there are no favorites saved or detected
   if (faveState <= 0) {
     return (
       <h2>
@@ -41,20 +42,55 @@ const FavoritesList = () => {
     )
   }
 
+  
+//collaspible content for favorites cards
   const readMore = () => {
-    if (showText === false) {
-      setShowText(true)
-   } else {
-      setShowText(false)
-   }
+      if (showText === false) {
+    setShowText(true)
+ } else {
+    setShowText(false)
+ }
+    
   }
+
+// const cardNum = () => {
+//   [...faveState].forEach((c, i ) => {
+//     console.log('NUM', c, "i", i) 
+   
+//     setCurrentFaveCard({currentFaveCard: [i]})
+//   })
+// }
+//doesn't know what card it's on ehhhh 
+//semi working, it is only finding 0 for the index so that's the only card it knows to open and close
+//need to give the cards page numbers to compare to index
+// const readMore = () => {
+
+//   faveState.forEach((car, i) => {
+//     console.log( "i", i)
+//     if(car["_id"] && i && showText === false) {
+//       // cardNum()
+//       // setCurrentFaveCard({currentFaveCard: car["_id"]})
+//       // console.log('read current fave', currentFaveCard)
+//       setShowText(true)
+//     } else {
+//       console.log('NOT WORKING')
+//       setShowText(false)
+//     }
+//   })
+// }
+
+
+
+// const readText = showText === true ? 'Read Less':'Read More ';
 
   //need to add validation when no search item matches
 
   return (
     <>
       <div className="search-container">
-        <SortFavorites />
+        <SortFavorites 
+
+        />
         <input
           type="text"
           placeholder="Search Favorite Cars"
@@ -67,12 +103,14 @@ const FavoritesList = () => {
         {!searchInput ? (
           <div className="favorite-container">
             {faveState.map((data, i) => {
+
               return (
-                <div key={i} className="fave-list">
+                <div test={i} className="fave-list" >
                   <RemoveFavoriteButton data={faveState} faveId={data._id} />
                   <p>{data.title}</p>
-                  <h3 onClick={readMore}> Read More
-                  {showText === true && 
+                  <h3 onClick={readMore} 
+                  > Read More
+                  {showText === true &&
                   <>
                   <p>{data.deetz}</p>
                   <p>{data.price}</p>
@@ -98,8 +136,14 @@ const FavoritesList = () => {
                 <div key={i} className="fave-list">
                   <RemoveFavoriteButton />
                   <p>{data.title}</p>
+                  <h3 onClick={readMore}> Read More
+                  {showText === true && 
+                  <>
                   <p>{data.deetz}</p>
                   <p>{data.price}</p>
+                  </>
+                  }
+                  </h3>
                   <p>
                     <img
                       src={data.img}

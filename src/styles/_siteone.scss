@@ -37,6 +37,10 @@ h3 {
     cursor: pointer; 
  }
 
+.save {
+    cursor: pointer;
+}
+
  .save:focus {
     color: paleturquoise;
     cursor: progress;

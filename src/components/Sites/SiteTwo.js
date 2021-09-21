@@ -1,8 +1,8 @@
-import "../styles/_sitetwo.scss";
+import "../../styles/_sitetwo.scss";
 //importing arrow icons
-import useData from "./Hooks/UseData";
-import Spinner from "./Spinner";
-import FaveButton from "./Favorites/FaveButton";
+import useData from "../Hooks/UseData";
+import Spinner from "../Spinner";
+import FaveButton from "../Favorites/FaveButton";
 
 const SiteTwo = () => {
   const { siteState, currentCard, nextCard, prevCard, isLoading } = useData(
@@ -63,7 +63,7 @@ const SiteTwo = () => {
                       <img src={data.img} alt="jeep img"></img>
                     </div>
                     <div className="page-num">
-                      <h3>Card: {currentCard} </h3>
+                      <h3>Card: {currentCard}/{siteState.length} </h3>
                     </div>
                     {/* <FontAwesomeIcon icon="angle-right" className='right-arrow-two' onClick={nextCard} /> */}
                   </div>

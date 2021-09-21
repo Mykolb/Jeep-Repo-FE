@@ -1,8 +1,8 @@
-import "../styles/_siteone.scss";
+import "../../styles/_siteone.scss";
 //importing arrow icons
-import useData from "./Hooks/UseData";
-import Spinner from "./Spinner";
-import FaveButton from "./Favorites/FaveButton";
+import useData from "../Hooks/UseData";
+import Spinner from "../Spinner";
+import FaveButton from "../Favorites/FaveButton";
 
 const SiteOne = () => {
   const { siteState, currentCard, nextCard, prevCard, isLoading } = useData(
@@ -57,12 +57,10 @@ const SiteOne = () => {
                     <div className="vehicleImg-container">
                       <h3>Vehicle Image</h3>
                       <hr></hr>
-                      <a href={data.img}>
                         <img src={data.img} alt="jeep img"></img>
-                      </a>
                     </div>
                     <div className="page-num">
-                      <h3>Card: {currentCard} </h3>
+                      <h3>Card: {currentCard}/{siteState.length} </h3>
                     </div>
                   </div>
                 )}
