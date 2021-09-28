@@ -7,15 +7,15 @@ import SortFavorites from "../SearchnSort/SortFavorties";
 
 
 const FavoritesList = () => {
-  const { faveState } = useData(
+  const { faveState} = useData(
     "https://jeep-prices-repo-be.herokuapp.com/my-favorites"
   );
   const [filteredFaves, setFilteredFaves] = useState([]);
   const [searchInput, setSearchInput] = useState("");
   const [showText, setShowText] = useState(false);
-  const [currentFaveCard, setCurrentFaveCard] = useState()
+  const [btnTxt, setBtnTxt] = useState('Read More')
   
-    console.log('favecard', currentFaveCard)
+
   
 //keeping track of the searchBar input
   const handleChange = (e) => {
@@ -42,48 +42,27 @@ const FavoritesList = () => {
     )
   }
 
+  const noSearchResults = () => {
+    if(searchInput && filteredFaves <= 0) {
+      return (
+        <h2> No cars were found matching that search term. Please try again.</h2>
+        
+      )
+  }
+  }
   
 //collaspible content for favorites cards
   const readMore = () => {
       if (showText === false) {
     setShowText(true)
+    setBtnTxt('Read Less')
+    
  } else {
     setShowText(false)
+    setBtnTxt('Read More')
  }
-    
-  }
+}
 
-// const cardNum = () => {
-//   [...faveState].forEach((c, i ) => {
-//     console.log('NUM', c, "i", i) 
-   
-//     setCurrentFaveCard({currentFaveCard: [i]})
-//   })
-// }
-//doesn't know what card it's on ehhhh 
-//semi working, it is only finding 0 for the index so that's the only card it knows to open and close
-//need to give the cards page numbers to compare to index
-// const readMore = () => {
-
-//   faveState.forEach((car, i) => {
-//     console.log( "i", i)
-//     if(car["_id"] && i && showText === false) {
-//       // cardNum()
-//       // setCurrentFaveCard({currentFaveCard: car["_id"]})
-//       // console.log('read current fave', currentFaveCard)
-//       setShowText(true)
-//     } else {
-//       console.log('NOT WORKING')
-//       setShowText(false)
-//     }
-//   })
-// }
-
-
-
-// const readText = showText === true ? 'Read Less':'Read More ';
-
-  //need to add validation when no search item matches
 
   return (
     <>
@@ -109,7 +88,7 @@ const FavoritesList = () => {
                   <RemoveFavoriteButton data={faveState} faveId={data._id} />
                   <p>{data.title}</p>
                   <h3 onClick={readMore} 
-                  > Read More
+                  > {btnTxt}
                   {showText === true &&
                   <>
                   <p>{data.deetz}</p>
@@ -131,6 +110,7 @@ const FavoritesList = () => {
           </div>
         ) : (
           <div className="favorite-container">
+            {noSearchResults()}
             {filteredFaves.map((data, i) => {
               return (
                 <div key={i} className="fave-list">
