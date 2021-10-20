@@ -4,16 +4,14 @@
     flex-direction: column;
     position: fixed;
     background-color: #0E0C10;
-    // height: 100%;
     width: 30px;
-    // transition: 0.5s;
     text-align: center;
     padding: 3%;
     top: 0;
     left: 0;
     bottom: 0;
-    // overflow-x: hidden;
-    border-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
     
 }
 
