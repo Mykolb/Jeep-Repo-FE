@@ -9,15 +9,15 @@ import { Route } from "react-router-dom";
 
 const Container = () => {
   return (
+    <>
+    <Menu />
     <div>
-      <Menu />
-      
-      {/* <h1>Please Select a Site</h1> */}
       <Route exact path={`/`} component={Home} />
       <Route exact path={`/site-one`} component={SiteOne} />
       <Route exact path={`/site-two`} component={SiteTwo} />
       <Route exact path={`/my-favorites`} component={FavoritesList} />
     </div>
+    </>
   );
 };
 

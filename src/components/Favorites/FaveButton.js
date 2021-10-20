@@ -10,7 +10,7 @@ const FaveButton = (props) => {
   // console.log('DaTA', data)
  
 
-  const { faveState, setValidate, successMsg, isFavorite, setFavorite, isActive, setActive, buttonColor, setButtonColor, validate} = UseData(
+  const { faveState, setFaveState,  setValidate, successMsg, isFavorite, setFavorite, isActive, setActive, buttonColor, setButtonColor, validate} = UseData(
     "https://jeep-prices-repo-be.herokuapp.com/my-favorites"
   );  
 
@@ -23,7 +23,8 @@ const FaveButton = (props) => {
           .post("https://jeep-prices-repo-be.herokuapp.com/my-favorites", item)
           .then((res) => {
             console.log(res);
-            faveState.push(res);
+            setFaveState(res)
+            // faveState.push(res);
             setValidate(true);
             setActive(true)
             // setButtonColor('red')
@@ -40,7 +41,7 @@ if(isActive === true) {
   return (
     <>
       <FontAwesomeIcon
-        icon="heart"
+        icon="bookmark"
         className={`save ${isActive ? 'active' : 'not-active'}`}
         onClick={() => addFavorite()}
       />
