@@ -10,7 +10,7 @@
 .fave-list {
     width: 300px;
     margin: 4% 1% 1% 1%;
-    @include containerColor;
+    background-color: #0E0C10;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     border-radius: 15px;
     padding: 1%;
@@ -24,6 +24,7 @@
 
 .fave-img {
     max-width: 300px;
+    border-radius: 15px;
 }
 
 p {
@@ -35,6 +36,11 @@ p {
     float: right;
     margin-left: .25%;
     cursor: pointer;
+    color: #2DEBC7;
+}
+
+.delete:hover {
+    color: #61626D;
 }
 
 .search-container {

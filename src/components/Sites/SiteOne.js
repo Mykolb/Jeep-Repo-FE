@@ -33,18 +33,14 @@ const SiteOne = () => {
                     <h3 className="next" onClick={nextCard}>
                       Next Page
                     </h3>
-
-                    {/* <h2>Site One Name Here</h2> */}
                     {/* price is one row centered*/}
                     <div className="price-container">
                       <h3>Price</h3>
-                      <hr></hr>
                       <p>{data.price} </p>
                     </div>
                     {/* both divs are in one row, two columns */}
                     <div className="details-container">
                       <h3>Details</h3>
-                      <hr></hr>
                       <p className="title">
                         <strong>Title:</strong> {data.title}
                       </p>
@@ -55,8 +51,6 @@ const SiteOne = () => {
                     </div>
 
                     <div className="vehicleImg-container">
-                      <h3>Vehicle Image</h3>
-                      <hr></hr>
                         <img src={data.img} alt="jeep img"></img>
                     </div>
                     <div className="page-num">

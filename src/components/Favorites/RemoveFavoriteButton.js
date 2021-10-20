@@ -21,9 +21,9 @@ const RemoveFavoriteButton = (props) => {
         .then((res) =>{
             console.log(res)
             let updatedState = [...faveState].filter(item => item.faveId !== faveId)
-            console.log('FaveId', faveId)
             console.log("Filtered", updatedState)
-            setFaveState({ faveState: updatedState})
+            setFaveState(...updatedState)
+            
 
               // setFaveState({faveState: [...faveState].filter(item => item.faveId !== faveId)})
               if(res.status === 201) {
@@ -34,6 +34,8 @@ const RemoveFavoriteButton = (props) => {
         })
         .catch((err) => console.log(err));
     }
+    
+    
   // console.log(faveState)
     // console.log('fave state', faveState)
  

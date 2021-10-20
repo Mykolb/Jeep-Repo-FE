@@ -15,7 +15,6 @@ const FavoritesList = () => {
   const [showText, setShowText] = useState(false);
   const [btnTxt, setBtnTxt] = useState('Read More')
   
-
   
 //keeping track of the searchBar input
   const handleChange = (e) => {
