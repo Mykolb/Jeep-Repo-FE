@@ -42,9 +42,9 @@ const SortFavorites = () => {
     return(
         <div className='sort-container'>
             <select name='sort'>
-                <option>Sort:</option>
-                <option value='low' onChange={selectDropdown}>Low to High</option>
-                <option value='high'>High to Low</option>
+                <option>Sort By Year:</option>
+                <option value='low' onChange={selectDropdown}>Least Recent to Most Recent</option>
+                <option value='high'>Most Recent to Least Recent</option>
             </select>
         </div>
     )

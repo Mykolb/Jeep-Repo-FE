@@ -41,7 +41,12 @@ p {
   .save {
     font-size: 2rem;
     margin-left: 1%;
+    
  }
+
+.site-container-two .save:hover {
+   color: #2DEBC7;
+}
 
 .site-container-two {
     @include container;

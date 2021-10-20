@@ -33,8 +33,6 @@ const SiteOne = () => {
                     <h3 className="next" onClick={nextCard}>
                       Next Page
                     </h3>
-
-                    {/* <h2>Site One Name Here</h2> */}
                     {/* price is one row centered*/}
                     <div className="price-container">
                       <h3>Price</h3>

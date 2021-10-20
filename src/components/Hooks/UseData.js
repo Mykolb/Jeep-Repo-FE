@@ -69,7 +69,7 @@ const useData = (myUrl) => {
     if (validate === true && !isFavorite) {
         return(
           <h4 className="fave-success-msg">{" "} 
-          Successfully added to Favorites!{" "} 
+          Saved!{" "} 
           <FontAwesomeIcon icon="check-circle"/>{" "}
           </h4>
         )

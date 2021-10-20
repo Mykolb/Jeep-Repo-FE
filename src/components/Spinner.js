@@ -5,8 +5,9 @@ const Spinner = () => {
   return (
     <div className="site-container">
       <Loader
-        type="ThreeDots"
-        color="#00BFFF"
+        type="MutatingDots"
+        color="#2DEBC7"
+        secondaryColor="#6845EB"	
         height={500}
         width={500}
         className="loader"

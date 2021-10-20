@@ -39,12 +39,14 @@ h3 {
 
 .save {
     cursor: pointer;
+    font-size: 2rem;
+    margin-left: 1%;
 }
 
- .save:focus {
-    color: paleturquoise;
-    cursor: progress;
- }
+.site-container-one .save:hover {
+    color: #6845EB;
+}
+
 
 
 .site-container-one {
