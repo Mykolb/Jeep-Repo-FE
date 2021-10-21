@@ -8,8 +8,6 @@ const Spinner = () => {
         type="MutatingDots"
         color="#2DEBC7"
         secondaryColor="#6845EB"	
-        height={350}
-        width={350}
         className="loader"
       />
     </div>
