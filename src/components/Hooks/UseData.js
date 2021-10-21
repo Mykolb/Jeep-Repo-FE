@@ -47,7 +47,6 @@ const useData = (myUrl) => {
   }, [myUrl]);
 
   //get all favorites data
-  //adding faveState in dependency url causes the request to re-render too many times
   useEffect(() => {
     let componentMounted = false;
     axios
@@ -63,7 +62,7 @@ const useData = (myUrl) => {
       }
       
       // .catch((err) => console.log(err));
-  }, [myUrl]);
+  }, [myUrl, faveState]);
 
   const successMsg = () => {
     if (validate === true && !isFavorite) {
