@@ -10,7 +10,7 @@ const SortFavorites = () => {
     const { faveState, setFaveState} = UseData('https://jeep-prices-repo-be.herokuapp.com/my-favorites'); 
     // console.log('state', faveState)
     const [sortFaves, setSortFaves] = useState([])
-    const [sortType, setSortType] = useState('price');
+    const [sortType, setSortType] = useState('title');
 
 
     const selectDropdown = e => {
@@ -31,11 +31,12 @@ const SortFavorites = () => {
 
     useEffect(() => {
         const sortedRes = [...faveState].sort((a, b) => {
-            return a.price - b.price
+            return a.title- b.title
+            
         })
-       
         setSortFaves(sortedRes)
-    }, [])
+        
+    }, [sortType])
 
     // console.log('Sort State', sortFaves)
 
@@ -46,6 +47,11 @@ const SortFavorites = () => {
                 <option value='low' onChange={selectDropdown}>Least Recent to Most Recent</option>
                 <option value='high'>Most Recent to Least Recent</option>
             </select>
+
+
+
+
+            
         </div>
     )
 

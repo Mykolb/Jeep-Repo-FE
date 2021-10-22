@@ -4,39 +4,32 @@ import axios from "axios";
 import "../../styles/_favebutton.scss";
 
 const FaveButton = (props) => {
-  // console.log('BTN PROPS', props)
   const { card, data} = props;
   // console.log('CARD', card)
   // console.log('DaTA', data)
  
 
-  const { faveState, setFaveState,  setValidate, successMsg, isFavorite, setFavorite, isActive, setActive, buttonColor, setButtonColor, validate} = UseData(
+  const { setFaveState,  setValidate, successMsg, isActive, setActive} = UseData(
     "https://jeep-prices-repo-be.herokuapp.com/my-favorites"
   );  
 
 
   const addFavorite = () => {
-    data.map((item, i) => {
+    data.forEach((item, i) => {
       // console.log('ITEM', item, 'I', i)
       if (item["_id"] && i === card) {
         axios
           .post("https://jeep-prices-repo-be.herokuapp.com/my-favorites", item)
           .then((res) => {
-            console.log(res);
             setFaveState(res)
             // faveState.push(res);
             setValidate(true);
             setActive(true)
-            // setButtonColor('red')
           })
           .catch((err) => console.log(err));
       }
     });
   };
-
-if(isActive === true) {
-  
-} 
 
   return (
     <>
